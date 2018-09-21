@@ -335,16 +335,16 @@
           
             <p>前阵子新开了一家src，就挖了一下，发现一个地方的url重定向漏洞，感觉类似的地方在src挖掘中应该不少，写一写</p>
 <p>漏洞是在登陆的地方，因为很多功能地方都需要登陆，共用一个登陆接口，都会跳转到登陆界面，登陆后按一个参数跳转回登陆前的页面</p>
-<p><code>https://id.xxxx.com/login;JSESSIONID=xxxxxxxxxxxxxxxxxx?callback=xxxxxx</code><br><img src="/src之url重定向/1.jpg" alt=""></p>
+<p><code>https://id.xxxx.com/login;JSESSIONID=xxxxxxxxxxxxxxxxxx?callback=xxxxxx</code><br><img src="/2018/09/20/src之url重定向/1.jpg" alt=""></p>
 <p>callback就是跳转的地方，这里是有防护的，会简单地检查callback参数，但是可以绕过</p>
-<p><code>https://id.xxxx.com/login;JSESSIONID=xxxxxxxxxxxxxxxxxx?callback=/////baidu.com</code><br>登陆后就会跳转到百度<br><img src="/src之url重定向/2.jpg" alt=""></p>
+<p><code>https://id.xxxx.com/login;JSESSIONID=xxxxxxxxxxxxxxxxxx?callback=/////baidu.com</code><br>登陆后就会跳转到百度<br><img src="/2018/09/20/src之url重定向/2.jpg" alt=""></p>
 <p>同理在登出的</p>
-<p><code>https://id.xxxx.com/logout?callback=////////////////////baidu.com</code><br><img src="/src之url重定向/3.jpg" alt=""><br><img src="/src之url重定向/4.jpg" alt=""></p>
+<p><code>https://id.xxxx.com/logout?callback=////////////////////baidu.com</code><br><img src="/2018/09/20/src之url重定向/3.jpg" alt=""><br><img src="/2018/09/20/src之url重定向/4.jpg" alt=""></p>
 <p>最后总结一下url跳转绕过的方法</p>
 <ol>
 <li>单斜线”/“绕过    url=/<a href="http://www.evil.com" target="_blank" rel="noopener">www.evil.com</a></li>
-<li>缺少协议绕过    url=//<a href="http://www.evil.com" target="_blank" rel="noopener">www.evil.com</a></li>
-<li>多斜线”/“前缀绕过url=///<a href="http://www.evil.com" target="_blank" rel="noopener">www.evil.com</a>    url=////<a href="http://www.evil.com" target="_blank" rel="noopener">www.evil.com</a></li>
+<li>缺少协议绕过url=//<a href="http://www.evil.com" target="_blank" rel="noopener">www.evil.com</a></li>
+<li>多斜线”/“前缀绕过url=///<a href="http://www.evil.comurl=////www.evil.com" target="_blank" rel="noopener">www.evil.comurl=////www.evil.com</a></li>
 <li>利用”@”符号绕过url=<a href="https://www.example.me@www.evil.com" target="_blank" rel="noopener">https://www.example.me@www.evil.com</a></li>
 <li>利用反斜线”\”绕过url=<a href="https://www.evil.com\www.example.me" target="_blank" rel="noopener">https://www.evil.com\www.example.me</a></li>
 <li>利用”#”符号绕过 url=<a href="https://www.evil.com#www.example.me" target="_blank" rel="noopener">https://www.evil.com#www.example.me</a></li>
