@@ -262,6 +262,144 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/20/src之url重定向/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeolus">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeolus's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/20/src之url重定向/" itemprop="url">src之url重定向</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-20T11:34:52+08:00">
+                2018-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>前阵子新开了一家src，就挖了一下，发现一个地方的url重定向漏洞，感觉类似的地方在src挖掘中应该不少，写一写</p>
+<p>漏洞是在登陆的地方，因为很多功能地方都需要登陆，共用一个登陆接口，都会跳转到登陆界面，登陆后按一个参数跳转回登陆前的页面</p>
+<p><code>https://id.xxxx.com/login;JSESSIONID=xxxxxxxxxxxxxxxxxx?callback=xxxxxx</code><br><img src="/src之url重定向/1.jpg" alt=""></p>
+<p>callback就是跳转的地方，这里是有防护的，会简单地检查callback参数，但是可以绕过</p>
+<p><code>https://id.xxxx.com/login;JSESSIONID=xxxxxxxxxxxxxxxxxx?callback=/////baidu.com</code><br>登陆后就会跳转到百度<br><img src="/src之url重定向/2.jpg" alt=""></p>
+<p>同理在登出的</p>
+<p><code>https://id.xxxx.com/logout?callback=////////////////////baidu.com</code><br><img src="/src之url重定向/3.jpg" alt=""><br><img src="/src之url重定向/4.jpg" alt=""></p>
+<p>最后总结一下url跳转绕过的方法</p>
+<ol>
+<li>单斜线”/“绕过    url=/<a href="http://www.evil.com" target="_blank" rel="noopener">www.evil.com</a></li>
+<li>缺少协议绕过    url=//<a href="http://www.evil.com" target="_blank" rel="noopener">www.evil.com</a></li>
+<li>多斜线”/“前缀绕过url=///<a href="http://www.evil.com" target="_blank" rel="noopener">www.evil.com</a>    url=////<a href="http://www.evil.com" target="_blank" rel="noopener">www.evil.com</a></li>
+<li>利用”@”符号绕过url=<a href="https://www.example.me@www.evil.com" target="_blank" rel="noopener">https://www.example.me@www.evil.com</a></li>
+<li>利用反斜线”\”绕过url=<a href="https://www.evil.com\www.example.me" target="_blank" rel="noopener">https://www.evil.com\www.example.me</a></li>
+<li>利用”#”符号绕过 url=<a href="https://www.evil.com#www.example.me" target="_blank" rel="noopener">https://www.evil.com#www.example.me</a></li>
+<li>利用”?”号绕过url=<a href="https://www.evil.com?www.example.me" target="_blank" rel="noopener">https://www.evil.com?www.example.me</a></li>
+<li>利用”\“绕过url=<a href="https://www.evil.com\\www.example.me" target="_blank" rel="noopener">https://www.evil.com\\www.example.me</a></li>
+<li>利用”.”绕过url=.evil.com<br>10.重复特殊字符绕过url=///<a href="http://www.evil.com//..url=////www.evil.com//." target="_blank" rel="noopener">www.evil.com//..url=////www.evil.com//.</a>.<br>11.缺少”//“绕过 url=https:eval.com</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/19/pwn-study-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +567,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
